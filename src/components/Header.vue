@@ -35,7 +35,15 @@ import { RouterLink } from 'vue-router'
 
         .navigation__item {
             color: black;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: rgb(19, 19, 19);
+                opacity: 0.8;
+            }
         }
+
+
     }
 }
 </style>
