@@ -1,13 +1,12 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <header class="header">
         <nav class="header__navigation">
             <router-link class="navigation__item" to="/workers">
-                <p class="info-text">Workers</p>
+                <p class="info-text">Работники</p>
             </router-link>
 
             <router-link class="navigation__item" to="/profile">
-                <p class="info-text">MyProfile</p>
+                <p class="info-text">Мой профиль</p>
                 <!-- :TODO имя пользователя -->
             </router-link>
         </nav>
@@ -21,7 +20,7 @@ import { RouterLink } from 'vue-router'
 
 <style scoped lang="scss">
 .header {
-    height: 60px;
+    height: 6vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -29,11 +28,11 @@ import { RouterLink } from 'vue-router'
     border-bottom: 2px solid #afafaf;
 
     .header__navigation {
-        width: 14vw;
         display: flex;
         justify-content: space-between;
 
         .navigation__item {
+            margin: 0 2vw;
             color: black;
             transition: all .3s ease-in-out;
 

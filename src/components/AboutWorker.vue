@@ -36,4 +36,5 @@ const close = () => {
     left: calc(50% - 50vw / 2);
     border-radius: 20px;
 }
+
 </style>

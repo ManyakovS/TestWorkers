@@ -21,6 +21,6 @@ import { RouterView } from 'vue-router'
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    height: 100vh;
+    height: 94vh;
   }
 </style>
