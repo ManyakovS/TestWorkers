@@ -40,6 +40,9 @@ const isAuthenticated = ref(false)
 router.beforeEach(async (to, from, next) => {
   const token = localStorage.getItem('auth_token')
 
+  if(token == null)
+    isAuthenticated.value = false
+
   if (to.name == 'auth' && token !== null) {
     if (await auth(token) == 200)
       next({ name: 'workers' })

@@ -15,18 +15,7 @@
             </div>
         </div>
 
-        <!-- <div v-else class="card register" v-bind:class="{ error: emptyFields }">
-            <h1>Sign Up</h1>
-            <form class="form-group">
-                <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
-                <input v-model="passwordReg" type="password" class="form-control" placeholder="Password" required>
-                <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirm Password" required>
-                <input type="submit" class="btn btn-primary" @click="doRegister">
-                <p>Already have an account? <a href="#" @click="registerActive = !registerActive, emptyFields = false">Sign
-                        in here</a>
-                </p>
-            </form>
-        </div> -->
+        <notification v-model="isShowNotification" :notification="{title: 'Ошибка авторизация', text: 'Неверный логин или пароль', time: 2500}"></notification>
     </div>
 </template>
 
@@ -38,10 +27,13 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 
 import AuthForm from '../components/AuthForm.vue'
+import Notification from '../components/ui/Notification.vue'
 
 const formType = ref('login')
 const questionsTransitionForms = ref('Нет аккаунта?')
 const textTransitionForms = ref('Зарегистрироваться')
+
+const isShowNotification = ref(false);
 
 
 const switchForm = () => {
@@ -82,7 +74,7 @@ const auth = async (authObjet: {email: string, password: string}) => {
         router.push('workers')
     }
     else {
-        console.log('Неверный логин или пароль')
+        isShowNotification.value = true;
     }
 
 
@@ -106,7 +98,7 @@ const auth = async (authObjet: {email: string, password: string}) => {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 65%;
+        height: clamp(550px, 65%, 650px);
         width: 40%;
     
         padding: 3%;

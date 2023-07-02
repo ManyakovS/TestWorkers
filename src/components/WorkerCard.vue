@@ -38,7 +38,7 @@ defineProps({
 
     padding: 30px 15px;
     width: 100%;
-    height: 55vh;
+    height: clamp(500px, 55vh, 600px);
     background-color: rgba($color: #fafafa, $alpha: .4);
     border-radius: 20px;
     box-shadow: 0 2px 12px 0 rgba(0,10,2,.1);

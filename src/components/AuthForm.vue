@@ -55,8 +55,8 @@ const emit = defineEmits<{
 }>()
 
 
-import WInput from "../components/UI/Input.vue"
-import WButton from "../components/UI/Button.vue"
+import WInput from "../components/ui/Input.vue"
+import WButton from "../components/ui/Button.vue"
 
 import { ref } from 'vue'
 
@@ -106,18 +106,18 @@ const submit = () => {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .auth-form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
 
     &__input {
-        margin: 20px 0;
+        margin: 20px 0 5px 0;
         font-size: 1.5rem;
         line-height: 2rem;
         width: 100%;
+        border-radius: 6px;
     }
 
     &__button {
